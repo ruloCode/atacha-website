@@ -3,6 +3,8 @@ import './App.css';
 // import { WhatsAppWidget } from 'react-whatsapp-widget';
 import 'react-whatsapp-widget/dist/index.css';
 
+import ReactTypingEffect from 'react-typing-effect';
+
 import logo from "./assets/logo.svg"
 import whatsappIcon from "./assets/whatsapp.png"
 import videohero from "./assets/herovideo.mp4"
@@ -31,10 +33,16 @@ function App() {
       <video src={videohero} autoPlay loop muted />
 
      <div className='content'>
-      <p>Te ayudamos a construir tu sueño</p>
+
+      <ReactTypingEffect
+      speed={100}
+      eraseDelay={1000}
+      eraseSpeed={0}
+      typingDelay={2500}
+        text={[ "Bienvenido a Atacha",  "Te ayudamos a hacer tu sueño realidad", "Cubrimiento de Eventos", "Producción Multimedia","Marketing Digital", "Desarrollo Web"]}
+      />
      </div>
 
-   
     </div>
   );
 }
