@@ -2,7 +2,7 @@ import './App.css';
 // import { WhatsAppWidget } from 'react-whatsapp-widget';
 import 'react-whatsapp-widget/dist/index.css';
 
-import logo from "./assets/logo.png"
+import logo from "./assets/logo.svg"
 import whatsappIcon from "./assets/whatsapp.png"
 import videohero from "./assets/barco.mp4"
 
