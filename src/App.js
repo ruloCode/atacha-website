@@ -1,3 +1,4 @@
+import React from 'react'
 import './App.css';
 // import { WhatsAppWidget } from 'react-whatsapp-widget';
 import 'react-whatsapp-widget/dist/index.css';
@@ -18,15 +19,22 @@ function App() {
       <img height={60} width={60} src={whatsappIcon} alt='logo' />
 
       </a>
-      <video src={videohero} autoPlay loop muted />
+      <footer>
+        
+        <a className='social'  rel="noreferrer" href='https://www.instagram.com/atacha.com.co' target="_blank" >
+          
+          <i className="fa-brands fa-instagram"></i>
+          atacha.com.co
+        </a>
       
-     
-      {/* <WhatsAppWidget CompanyIcon={Icono} phoneNumber="+573156753404" /> */}
+     </footer>
+      <video src={videohero} autoPlay loop muted />
 
      <div className='content'>
-      {/* <h1>Captamos</h1> */}
       <p>Te ayudamos a construir tu sueño</p>
      </div>
+
+   
     </div>
   );
 }
