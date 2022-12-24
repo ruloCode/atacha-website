@@ -34,6 +34,17 @@ video {
   color: white;
 }
 
+.whatsapp {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  z-index: 10;
+}
+
 
 .overlay {
   position: absolute;

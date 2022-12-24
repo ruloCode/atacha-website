@@ -1,10 +1,10 @@
 import './App.css';
-import { FloatingWhatsApp } from 'react-floating-whatsapp'
-
+// import { WhatsAppWidget } from 'react-whatsapp-widget';
+import 'react-whatsapp-widget/dist/index.css';
 
 import logo from "./assets/logo.png"
-import Icono from "./assets/icono.png"
-// import videohero from "./assets/barco.mp4"
+import whatsappIcon from "./assets/whatsapp.png"
+import videohero from "./assets/barco.mp4"
 
 function App() {
   return (
@@ -14,9 +14,14 @@ function App() {
       <header>
         <img src={logo} alt='logo' />
       </header>
-      {/* <video src={videohero} autoPlay loop muted /> */}
-      <FloatingWhatsApp avatar={Icono} chatMessage='Hola!
-      En qué podemos ayudarte?'	 accountName='Atacha' phoneNumber='+573156753404' />
+      <a href='https://wa.me/+573156753404' target='_blank' className='whatsapp' rel="noreferrer">
+      <img height={60} width={60} src={whatsappIcon} alt='logo' />
+
+      </a>
+      <video src={videohero} autoPlay loop muted />
+      
+     
+      {/* <WhatsAppWidget CompanyIcon={Icono} phoneNumber="+573156753404" /> */}
 
      <div className='content'>
       {/* <h1>Captamos</h1> */}
