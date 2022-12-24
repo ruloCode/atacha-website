@@ -4,7 +4,7 @@ import 'react-whatsapp-widget/dist/index.css';
 
 import logo from "./assets/logo.svg"
 import whatsappIcon from "./assets/whatsapp.png"
-import videohero from "./assets/barco.mp4"
+import videohero from "./assets/herovideo.mp4"
 
 function App() {
   return (
