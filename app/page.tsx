@@ -1,5 +1,6 @@
 "use client"
 import React, { useRef,useState } from "react";
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { FiLock } from "react-icons/fi";
 import { Canvas, useFrame } from "@react-three/fiber";
@@ -87,6 +88,8 @@ const SHUFFLE_TIME = 50;
 const CHARS = "!@#$%^&*():{};|,.<>/?";
 
 const EncryptButton = () => {
+  const router = useRouter()
+
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const [text, setText] = useState(TARGET_TEXT);
@@ -131,6 +134,7 @@ const EncryptButton = () => {
       whileTap={{
         scale: 0.975,
       }}
+      onClick={() => router.push('/dashboard')}
       onMouseEnter={scramble}
       onMouseLeave={stopScramble}
       className="group relative overflow-hidden rounded-lg border-[1px] border-slate-500 bg-slate-700 px-4 py-2 font-mono font-medium uppercase text-slate-300 transition-colors hover:text-indigo-300"
