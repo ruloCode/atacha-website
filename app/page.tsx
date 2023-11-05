@@ -81,7 +81,7 @@ const Example = () => {
   );
 };
 
-const TARGET_TEXT = "Login to Dashboard";
+const TARGET_TEXT = "Login";
 const CYCLES_PER_LETTER = 2;
 const SHUFFLE_TIME = 50;
 

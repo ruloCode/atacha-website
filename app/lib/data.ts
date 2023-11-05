@@ -1,7 +1,7 @@
 import { sql } from '@vercel/postgres';
 import { unstable_noStore as noStore } from 'next/cache';
 import {
-  CustomerField,
+  FormattedCustomersTable,
   CustomersTable,
   InvoiceForm,
   InvoicesTable,
@@ -175,10 +175,14 @@ export async function fetchInvoiceById(id: string)  {
 
 export async function fetchCustomers() {
   try {
-    const data = await sql<CustomerField>`
+    const data = await sql<FormattedCustomersTable>`
       SELECT
         id,
-        name
+        name,
+        email,
+        image_url
+        
+    
       FROM customers
       ORDER BY name ASC
     `;
