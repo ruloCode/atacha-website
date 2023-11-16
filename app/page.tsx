@@ -1,13 +1,13 @@
-"use client"
-import React, { useRef,useState } from "react";
-import { useRouter } from 'next/navigation'
-import Link from 'next/link'
-import { FiLock } from "react-icons/fi";
+"use client";
+import React, { useRef, useState } from "react";
+
+import { inter, open_sans,  } from './ui/fonts';
+import Image from "next/image";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Sphere } from "@react-three/drei";
 import { pointsInner, pointsOuter } from "./utils";
 import { Group } from "three";
-import { motion } from "framer-motion";
+import styles from "./page.module.css";
 
 const ParticleRing = () => {
   return (
@@ -16,8 +16,8 @@ const ParticleRing = () => {
         camera={{
           position: [10, -7.5, -5],
         }}
-        style={{ height: "100vh" }}
-        className="bg-slate-900"
+        style={{ height: "60vh" }} // Changed the height to 60vh
+        className="bg-[#130921] relative"
       >
         <OrbitControls maxDistance={20} minDistance={10} />
         <directionalLight />
@@ -25,13 +25,22 @@ const ParticleRing = () => {
         <PointCircle />
       </Canvas>
 
-      <h1 className="absolute top-[40%] left-[50%] -translate-x-[50%] ">
-      <Example />
+      <div className="absolute top-[35%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] flex items-center justify-center">
+        <Image alt="logo" src="/Atacha_logo.svg" width={80} height={80} />
+        <span className={styles.logoTitle}>tacha.</span>
+      </div>
 
-      </h1>
-
-      
-      
+      <div className={styles.heroAction}>
+        {" "}
+        {/* New div for action buttons */}
+        <h1 
+       
+        
+        className={styles.heroTitle}>Inversión para tu futuro, el camino más corto al éxito</h1>
+        <button className={styles.actionButton}>
+          Comenzar
+        </button>
+      </div>
     </div>
   );
 };
@@ -71,97 +80,5 @@ const Point = ({ position, color }: { position: number[]; color: string }) => {
     </Sphere>
   );
 };
-
-const Example = () => {
-  return (
-    <div className=" grid min-h-[200px] place-content-center 
-     p-4">
-      <EncryptButton />
-    </div>
-  );
-};
-
-const TARGET_TEXT = "Login";
-const CYCLES_PER_LETTER = 2;
-const SHUFFLE_TIME = 50;
-
-const CHARS = "!@#$%^&*():{};|,.<>/?";
-
-const EncryptButton = () => {
-  const router = useRouter()
-
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  const [text, setText] = useState(TARGET_TEXT);
-
-  const scramble = () => {
-    let pos = 0;
-
-    intervalRef.current = setInterval(() => {
-      const scrambled = TARGET_TEXT.split("")
-        .map((char, index) => {
-          if (pos / CYCLES_PER_LETTER > index) {
-            return char;
-          }
-
-          const randomCharIndex = Math.floor(Math.random() * CHARS.length);
-          const randomChar = CHARS[randomCharIndex];
-
-          return randomChar;
-        })
-        .join("");
-
-      setText(scrambled);
-      pos++;
-
-      if (pos >= TARGET_TEXT.length * CYCLES_PER_LETTER) {
-        stopScramble();
-      }
-    }, SHUFFLE_TIME);
-  };
-
-  const stopScramble = () => {
-    clearInterval(intervalRef.current || undefined);
-
-    setText(TARGET_TEXT);
-  };
-
-  return (
-    <motion.button
-      whileHover={{
-        scale: 1.025,
-      }}
-      whileTap={{
-        scale: 0.975,
-      }}
-      onClick={() => router.push('/dashboard')}
-      onMouseEnter={scramble}
-      onMouseLeave={stopScramble}
-      className="group relative overflow-hidden rounded-lg border-[1px] border-slate-500 bg-slate-700 px-4 py-2 font-mono font-medium uppercase text-slate-300 transition-colors hover:text-indigo-300"
-    >
-      <div className="relative z-10 flex items-center gap-2">
-        <FiLock />
-        <span>{text}</span>
-      </div>
-      <motion.span
-        initial={{
-          y: "100%",
-        }}
-        animate={{
-          y: "-100%",
-        }}
-        transition={{
-          repeat: Infinity,
-          repeatType: "mirror",
-          duration: 1,
-          ease: "linear",
-        }}
-        className="duration-300 absolute inset-0 z-0 scale-125 bg-gradient-to-t from-indigo-400/0 from-40% via-indigo-400/100 to-indigo-400/0 to-60% opacity-0 transition-opacity group-hover:opacity-100"
-      />
-    </motion.button>
-  );
-};
-
-
 
 export default ParticleRing;

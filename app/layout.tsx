@@ -1,4 +1,4 @@
-import { inter } from './ui/fonts';
+import { inter, open_sans } from './ui/fonts';
 import  './ui/global.css'
 export default function RootLayout({
   children,
@@ -7,7 +7,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={  `${inter.className} antialiased`}   >{children}</body>
+      <body className={  `${open_sans.className} antialiased`}   >{children}</body>
     </html>
   );
 }
