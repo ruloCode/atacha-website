@@ -36,7 +36,7 @@ const ParticleRing = () => {
         <h1 
        
         
-        className={styles.heroTitle}>Inversión para tu futuro, el camino más corto al éxito</h1>
+        className={styles.heroTitle}>El éxito es invertir en tu futuro.</h1>
         <button className={styles.actionButton}>
           Comenzar
         </button>
