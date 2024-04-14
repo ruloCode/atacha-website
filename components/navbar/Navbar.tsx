@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export const Navbar = () => {
   return (
-    <nav className=" bg-[#130921]  flex items-center justify-between w-full">
+    <nav className=" bg-[#130921]  flex items-center justify-between w-full ">
       <Link href="/" className="flex items-center">
         <div className="relative h-8 w-8 mr-4">
           <Image alt="logo" src="./assets/Atacha_logo.svg" fill />

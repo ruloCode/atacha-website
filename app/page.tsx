@@ -2,7 +2,8 @@
 import React, { useRef, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { inter, open_sans } from "./ui/fonts";
+import { useUser } from "@clerk/nextjs";
+
 import TypewriterComponent from "typewriter-effect";
 import Image from "next/image";
 import { Canvas, useFrame } from "@react-three/fiber";
@@ -12,6 +13,9 @@ import { Group } from "three";
 import styles from "./page.module.css";
 
 const ParticleRing = () => {
+  const { user } = useUser();
+  console.log('user', user)
+
   return (
     <div className="relative ">
       <Canvas
@@ -49,7 +53,7 @@ const ParticleRing = () => {
           Impulsa tu idea 10x usando IA
         </div>
         <div>
-          <Link href="/sign-in">
+          <Link href='/dashboard'>
             <Button variant="secondary" className="md:text-lg p-4 md:p-6">
               Comenzar ahora
             </Button>
