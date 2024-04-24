@@ -21,16 +21,39 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 export const Chat = () => {
-  const { messages, input, handleInputChange, handleSubmit, isLoading } =
-    useChat();
+  const [sayHello, setSayHello] = React.useState(false);
+  const {
+    messages,
+    input,
+    handleInputChange,
+    handleSubmit,
+    isLoading,
+    setMessages,
+  } = useChat();
 
   const { user } = useUser();
+  const userFirstName = user?.firstName || "";
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       prompt: "",
     },
   });
+
+  React.useEffect(() => {
+    if (sayHello) {
+      return;
+    }
+    setMessages([
+      {
+        id: "initial",
+        content: `Hola ${userFirstName}, ¿ En qué puedo ayudarte hoy ?`,
+        role: "assistant",
+      },
+    ]);
+    setSayHello(true);
+  }, []);
+
   return (
     <div className="h-full flex flex-col  md:grid md:grid-rows-[85%,15%] ">
       <div className=" flex-1 pb-[140px]  overflow-y-scroll md:max-h-none   ">
