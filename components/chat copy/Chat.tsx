@@ -1,9 +1,10 @@
 "use client";
-
+import html from 'remark-html';
 import React from "react";
+import Markdown from 'react-markdown';
+import gfm from 'remark-gfm'; // Para soportar tablas de GitHub flavored markdown
+
 import { useChat } from "ai/react";
-import gfm from 'remark-gfm';
-import ReactMarkdon from "react-markdown";
 import { useUser } from "@clerk/nextjs";
 import {
   Form,
@@ -42,6 +43,8 @@ export const Chat = () => {
     },
   });
 
+ 
+
   React.useEffect(() => {
     if (sayHello) {
       return;
@@ -55,8 +58,6 @@ export const Chat = () => {
     ]);
     setSayHello(true);
   }, []);
-
-  console.log(messages, '')
 
   return (
     <div className="h-full flex flex-col  md:grid md:grid-rows-[85%,15%] ">
@@ -89,38 +90,8 @@ export const Chat = () => {
                   AI:
                 </>
               )}
-
-              <ReactMarkdon
-              remarkPlugins={[gfm]}
-                components={{
-                  pre: ({node, ...props}) => (
-                    <div className="overflow-auto w-full my-2 bg-[#F2F1EB] p-2 rounded-lg">
-                      <pre {...props} />
-                    </div>
-                  ),
-                  code: ({node, ...props}) => (
-                    <code {...props} className=" bg-[#F2F1EB] rounded-lg p-2" />
-                  ),
-                  table: ({node, ...props}) => (
-                    <div className="overflow-auto">
-                      <table {...props} className="w-full text-left border-collapse table-auto" />
-                    </div>
-                  ),
-                  th: ({node, ...props}) => (
-                    <th {...props} className="p-3 border-2 border-gray-200" />
-                  ),
-                  td: ({node, ...props}) => (
-                    <td {...props} className="p-3 border-2 border-gray-200" />
-                  )
-                  
-                }}
-             
-
-              className="text-sm overflow-hidden leading-7"
-            
-              
-              >{m.content || ""}</ReactMarkdon>
-             {/* {m.content || ""} */}
+              <div>{m.content}</div> 
+              {/* <div dangerouslySetInnerHTML={{ __html: converMarkdownToString(m.content) }} /> */}
             </div>
           ))}
         </div>
