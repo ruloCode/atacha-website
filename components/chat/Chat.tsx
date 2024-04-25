@@ -1,8 +1,12 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 
 import React from "react";
 import { useChat } from "ai/react";
-import gfm from 'remark-gfm';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner, faClipboard } from "@fortawesome/free-solid-svg-icons";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import gfm from "remark-gfm";
 import ReactMarkdon from "react-markdown";
 import { useUser } from "@clerk/nextjs";
 import {
@@ -56,7 +60,7 @@ export const Chat = () => {
     setSayHello(true);
   }, []);
 
-  console.log(messages, '')
+  console.log(messages, "");
 
   return (
     <div className="h-full flex flex-col  md:grid md:grid-rows-[85%,15%] ">
@@ -91,36 +95,66 @@ export const Chat = () => {
               )}
 
               <ReactMarkdon
-              remarkPlugins={[gfm]}
+                remarkPlugins={[gfm]}
                 components={{
-                  pre: ({node, ...props}) => (
+                  pre: ({ node, ...props }) => (
                     <div className="overflow-auto w-full my-2 bg-[#F2F1EB] p-2 rounded-lg">
                       <pre {...props} />
                     </div>
                   ),
-                  code: ({node, ...props}) => (
-                    <code {...props} className=" bg-[#F2F1EB] rounded-lg p-2" />
-                  ),
-                  table: ({node, ...props}) => (
+                  code: ({ node, className, children, ...props }) => {
+                    const [isCopied, setIsCopied] = React.useState(false);
+
+                    const handleCopy = () => {
+                      setIsCopied(true);
+                      setTimeout(() => setIsCopied(false), 2000);
+                    };
+
+                  
+
+                    return (
+                      <div className="flex flex-col">
+                        <div className="w-full flex justify-end bg-[#2f2f2f] text-[#cdcdcd] px-2 rounded-sm">
+                          <CopyToClipboard
+                            text={String(children)}
+                            onCopy={handleCopy}
+                          >
+                            <div className="flex gap-2 items-center">
+                              <FontAwesomeIcon icon={faClipboard} size="lg" />
+
+                              <button>{isCopied ? "Copiado" : "Copiar"}</button>
+                            </div>
+                          </CopyToClipboard>
+                        </div>
+                        <code
+                          {...props}
+                          className="bg-[#F2F1EB] rounded-lg p-2"
+                        >
+                          {children}
+                        </code>
+                      </div>
+                    );
+                  },
+                  table: ({ node, ...props }) => (
                     <div className="overflow-auto">
-                      <table {...props} className="w-full text-left border-collapse table-auto" />
+                      <table
+                        {...props}
+                        className="w-full text-left border-collapse table-auto"
+                      />
                     </div>
                   ),
-                  th: ({node, ...props}) => (
+                  th: ({ node, ...props }) => (
                     <th {...props} className="p-3 border-2 border-gray-200" />
                   ),
-                  td: ({node, ...props}) => (
+                  td: ({ node, ...props }) => (
                     <td {...props} className="p-3 border-2 border-gray-200" />
-                  )
-                  
+                  ),
                 }}
-             
-
-              className="text-sm overflow-hidden leading-7"
-            
-              
-              >{m.content || ""}</ReactMarkdon>
-             {/* {m.content || ""} */}
+                className="text-sm overflow-hidden leading-7"
+              >
+                {m.content || ""}
+              </ReactMarkdon>
+              {/* {m.content || ""} */}
             </div>
           ))}
         </div>
