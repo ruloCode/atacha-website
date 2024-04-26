@@ -63,9 +63,9 @@ export const Chat = () => {
   console.log(messages, "");
 
   return (
-    <div className="h-full flex flex-col  md:grid md:grid-rows-[85%,15%] ">
-      <div className=" flex-1 pb-[140px]  overflow-y-scroll md:max-h-none   ">
-        <div className="flex flex-col  gap-y-4 ">
+    <div className="h-full flex flex-col  md:grid md:grid-rows-[85%,15%] text-black ">
+      <div className=" flex-1 pb-[140px]  overflow-y-auto md:max-h-none   ">
+        <div className="flex flex-col  gap-y-1 ">
           {messages.map((m: any) => (
             <div
               key={m.id}
@@ -150,7 +150,7 @@ export const Chat = () => {
                     <td {...props} className="p-3 border-2 border-gray-200" />
                   ),
                 }}
-                className="text-sm overflow-hidden leading-7"
+                className="text-sm overflow-hidden leading-7 grid"
               >
                 {m.content || ""}
               </ReactMarkdon>
@@ -175,7 +175,7 @@ export const Chat = () => {
                       placeholder="Mensaje a Atacha IA ..."
                       id="prompt"
                       onChange={handleInputChange}
-                      className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent overflow-visible"
+                      className="border-none outline-none  overflow-visible bg-white "
                       value={input}
                     />
                   </FormControl>
@@ -184,8 +184,9 @@ export const Chat = () => {
             />
             <Button
               type="submit"
+
               disabled={isLoading}
-              className="col-span-12 md:col-span-2  text-white rounded-lg p-2"
+              className="col-span-12 md:col-span-2  rounded-lg p-2 bg-black text-white"
             >
               {isLoading ? "Enviando..." : "Generar"}
             </Button>
