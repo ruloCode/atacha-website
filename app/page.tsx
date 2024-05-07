@@ -13,15 +13,16 @@ import { Group } from "three";
 import styles from "./page.module.css";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Benefits from "@/components/Benefits";
 
 const Home = () => {
   const { user } = useUser();
-  console.log("user", user);
 
   return (
     <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden ">
       <Header />
       <Hero />
+      <Benefits />
 
     </div>
   );

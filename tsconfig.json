@@ -26,9 +26,10 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "**/*.jsx",
     ".next/types/**/*.ts",
     "app/lib/placeholder-data.js",
     "scripts/seed.js"
-  ],
+, "components/Benefits.jsx"  ],
   "exclude": ["node_modules"]
 }
