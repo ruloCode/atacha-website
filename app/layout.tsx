@@ -1,5 +1,6 @@
 import { inter, open_sans } from "./ui/fonts";
 import Script from "next/script";
+import { Analytics } from '@vercel/analytics/react';
 
 import { ClerkProvider } from "@clerk/nextjs";
 import "./ui/global.css";
@@ -26,6 +27,7 @@ export default function RootLayout({
         </head>
         <body className={`${open_sans.className} antialiased`}>
           {children}
+          <Analytics />
           <noscript>
             <iframe
               src="https://www.googletagmanager.com/ns.html?id=GTM-5N7J572C"
