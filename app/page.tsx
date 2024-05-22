@@ -14,16 +14,20 @@ import styles from "./page.module.css";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Benefits from "@/components/Benefits";
+import Alfa from "@/components/Alfa";
+import HowItWorks from "@/components/HowItWorks";
+import Testimonials from "@/components/Testimonials";
 
 const Home = () => {
   const { user } = useUser();
 
   return (
-    <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden ">
+    <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden bg-white ">
       <Header />
       <Hero />
-      {/* <Benefits /> */}
-
+      <Alfa />
+      <HowItWorks />
+      <Testimonials />
     </div>
   );
 };
