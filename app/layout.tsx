@@ -1,6 +1,6 @@
 import { inter, open_sans } from "./ui/fonts";
 import Script from "next/script";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 
 import { ClerkProvider } from "@clerk/nextjs";
 import "./ui/global.css";
@@ -14,7 +14,18 @@ export default function RootLayout({
       <html lang="en">
         <head>
           <meta charSet="utf-8" />
-          <Script async src="https://www.googletagmanager.com/gtag/js?id=G-YJ74Y2303D" />
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css
+
+
+
+"
+          />
+          <Script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-YJ74Y2303D"
+          />
           <Script id="google-analytics">
             {`
               window.dataLayer = window.dataLayer || [];
@@ -42,11 +53,11 @@ export default function RootLayout({
               height="0"
               width="0"
               style={{
-                width: '0px',
-                height: '0px',
-                border: 'none',
-                display: 'none',
-                visibility: 'hidden',
+                width: "0px",
+                height: "0px",
+                border: "none",
+                display: "none",
+                visibility: "hidden",
               }}
             ></iframe>
           </noscript>

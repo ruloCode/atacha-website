@@ -17,6 +17,10 @@ import Benefits from "@/components/Benefits";
 import Alfa from "@/components/Alfa";
 import HowItWorks from "@/components/HowItWorks";
 import Testimonials from "@/components/Testimonials";
+import Solutions from "@/components/Solutions";
+import TrustedBy from "@/components/TrustedBy";
+import ReadyToStart from "@/components/ReadyToStart";
+import Footer from "@/components/Footer";
 
 const Home = () => {
   const { user } = useUser();
@@ -28,6 +32,10 @@ const Home = () => {
       <Alfa />
       <HowItWorks />
       <Testimonials />
+      <Solutions />
+      <TrustedBy />
+      <ReadyToStart />
+      <Footer />
     </div>
   );
 };
