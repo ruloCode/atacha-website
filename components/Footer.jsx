@@ -1,9 +1,16 @@
 import React from "react";
 import { MaxWidthWrapper } from "./maxWidthWrapper/MaxWidthWrapper";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <div className="p-8 bg-black py-12 px-4">
+    <motion.div 
+      className="p-8 bg-black py-12 px-4"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+    >
       <MaxWidthWrapper>
         {/* <div className="w-full flex-col md:flex-row  flex justify-between py-4">
           <div>
@@ -81,29 +88,63 @@ const Footer = () => {
             </ul>
           </div>
         </div> */}
-        <div className="flex flex-col md:flex-row justify-between items-center mt-8 border-t border-gray-700 pt-4">
-          <div className="flex items-center mb-4 md:mb-0">
-      
+        <motion.div 
+          className="flex flex-col md:flex-row justify-between items-center mt-8 border-t border-gray-700 pt-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <motion.div 
+            className="flex items-center mb-4 md:mb-0"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             <span>Bogotá, Colombia</span>
-          </div>
-          <div className="flex space-x-4 gap-2">
-            <a href="#">
+          </motion.div>
+          <motion.div 
+            className="flex space-x-4 gap-2"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <motion.a 
+              href="#"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <i className="fab fa-twitter"></i>
-            </a>
-            <a href="#">
+            </motion.a>
+            <motion.a 
+              href="#"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <i className="fab fa-facebook"></i>
-            </a>
-            <a href="#">
+            </motion.a>
+            <motion.a 
+              href="#"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <i className="fab fa-instagram"></i>
-            </a>
-          </div>
-        </div>
-        <div className="flex flex-col md:flex-row justify-between items-center mt-4 text-gray-500 text-sm">
+            </motion.a>
+          </motion.div>
+        </motion.div>
+        <motion.div 
+          className="flex flex-col md:flex-row justify-between items-center mt-4 text-gray-500 text-sm"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+        >
           <span className="mb-4 md:mb-0">© 2024. Atacha Online.</span>
-         
-        </div>
+        </motion.div>
       </MaxWidthWrapper>
-    </div>
+    </motion.div>
   );
 };
 
