@@ -17,7 +17,7 @@ export const Alfa = () => {
         >
           Power up your business.
         </motion.h1>
-        <div className="flex flex-col md:flex-row space-y-8 md:space-y-0  md:justify-between gap-4">
+        <div className="flex flex-col md:flex-row space-y-8 md:space-y-0  md:justify-between md:gap-4">
           <motion.div 
             className="bg-gray-800 p-6 rounded-lg"
             initial={{ opacity: 0, x: -50 }}
@@ -30,8 +30,8 @@ export const Alfa = () => {
               src="https://images.ctfassets.net/2d5q1td6cyxq/39El2vAcwSNhvPtd41NPmt/b9a8a8360ce439246e5c433595654c78/PD04292_-_Work_with_experts_Prettybird_Office.png?w=1140&h=712&fm=avif&q=85&fit=scale"
               alt="Two people discussing work with laptops"
               className="rounded-lg mb-4"
-              width={1140}
-              height={712}
+              width={768}
+              height={480}
             />
             <motion.h2 
               className="text-xl font-semibold mb-2"
@@ -64,8 +64,8 @@ export const Alfa = () => {
               src="https://images.ctfassets.net/2d5q1td6cyxq/76bK2W2yhOwot6o02Xip3Z/33b2dea141ca52d461404ff0c3edd2de/PD04293_-_USEN_Joao_Muchacho_Macbook_Sales_Summary.png?w=1140&h=712&fm=avif&q=85&fit=scale"
               alt="Two people discussing work with laptops"
               className="rounded-lg mb-4"
-              width={1140}
-              height={712}
+              width={768}
+              height={480}
             />
             <motion.h2 
               className="text-xl font-semibold mb-2"

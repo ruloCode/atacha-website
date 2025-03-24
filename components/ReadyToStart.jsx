@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import MaxWidthWrapper from "./maxWidthWrapper/MaxWidthWrapper";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const ReadyToStart = () => {
   return (
@@ -24,6 +25,7 @@ const ReadyToStart = () => {
           >
             Ready to stand out <br /> with our services?
           </motion.h1>
+          <br />
           <motion.div 
             className="flex flex-col md:flex-row gap-2 items-center justify-center"
             initial={{ opacity: 0, y: 20 }}
@@ -31,9 +33,11 @@ const ReadyToStart = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <Button className="bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50">
-              Connect with our team
-            </Button>
+            <Link href="https://api.whatsapp.com/send?phone=573007438588&text=Hi%2C+I+want+to+know+more+about+Atacha%27s+online+services" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50">
+                Connect with our team
+              </Button>
+            </Link>
           </motion.div>
         </motion.div>
         <motion.div 
@@ -44,11 +48,11 @@ const ReadyToStart = () => {
           transition={{ duration: 0.8 }}
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.2 }}
+            whileInView={{ opacity: 1, scale: .8 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: .8 }}
           >
             <Image
               className="rounded-lg w-full lg:w-auto"

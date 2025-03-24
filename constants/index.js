@@ -41,35 +41,28 @@ export const navigation = [
     id: "0",
     title: "Features",
     url: "#alfa",
+    onlyMobile: false
   },
  
   {
     id: "2",
     title: "How to use",
     url: "#how-to-use",
+    onlyMobile: false
   },
   {
     id: "3",
     title: "Solutions",
     url: "#solutions",
+    onlyMobile: false
   },
   {
     id: "4",
     title: "Roadmap",
     url: "#roadmap",
+    onlyMobile: false
   },
-  {
-    id: "4",
-    title: "New account",
-    url: "#signup",
-    onlyMobile: true,
-  },
-  {
-    id: "5",
-    title: "Sign in",
-    url: "#login",
-    onlyMobile: true,
-  },
+
 ];
 
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare];

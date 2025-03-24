@@ -39,7 +39,7 @@ const HowItWorks = () => {
           </p>
         </motion.div>
         <div className="mt-10">
-          <div className="flex flex-col md:flex-row justify-between gap-4">
+          <div className="flex flex-col md:flex-row justify-between gap-6">
             {steps.map((step, index) => (
               <motion.div 
                 key={step.number}

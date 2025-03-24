@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Component() {
   return (
@@ -62,9 +63,11 @@ export default function Component() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
-            <Button className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50">
-              Connect with our team
-            </Button>
+            <Link href="https://api.whatsapp.com/send?phone=573007438588&text=Hi%2C+I+want+to+know+more+about+Atacha%27s+online+services" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50">
+                Connect with our team
+              </Button>
+            </Link>
           </motion.div>
         </motion.div>
         <motion.div 
