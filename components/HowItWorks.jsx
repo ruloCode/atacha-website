@@ -6,12 +6,11 @@ const HowItWorks = () => {
     <div className="py-12 px-4 md:px-0">
       <MaxWidthWrapper>
         <div className="text-left">
-          <h2 className="text-3xl font-extrabold text-gray-900">
-            Conoce Nuestro Proceso
+          <h2  id="how-to-use" className="text-3xl font-extrabold text-gray-900">
+            Get to Know Our Process
           </h2>
           <p className="mt-4 text-lg text-gray-500">
-            Nuestro enfoque está diseñado para proporcionarte resultados
-            excepcionales.
+            Our approach is designed to provide you with exceptional results.
           </p>
         </div>
         <div className="mt-10">
@@ -22,12 +21,11 @@ const HowItWorks = () => {
                   <span className="text-xl font-bold">1</span>
                 </div>
                 <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
-                  Contáctanos
+                  Contact Us
                 </p>
               </div>
               <dd className="mt-2 ml-16 text-base text-gray-500">
-                Inicia una conversación con nuestro equipo para discutir tus
-                necesidades y expectativas.
+                Start a conversation with our team to discuss your needs and expectations.
               </dd>
             </div>
             <div className="relative">
@@ -36,12 +34,11 @@ const HowItWorks = () => {
                   <span className="text-xl font-bold">2</span>
                 </div>
                 <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
-                  Desarrollamos la Estrategia
+                  We Develop the Strategy
                 </p>
               </div>
               <dd className="mt-2 ml-16 text-base text-gray-500">
-                Colabora con nuestro equipo para desarrollar una estrategia
-                personalizada que se ajuste a tus necesidades.
+                Collaborate with our team to develop a customized strategy that fits your needs.
               </dd>
             </div>
             <div className="relative">
@@ -50,12 +47,11 @@ const HowItWorks = () => {
                   <span className="text-xl font-bold">3</span>
                 </div>
                 <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
-                  Impulsa tu Crecimiento.
+                  Drive Your Growth
                 </p>
               </div>
               <dd className="mt-2 ml-16 text-base text-gray-500">
-                Observa cómo nuestra colaboración logra un crecimiento notable y
-                sostenible en tu negocio.
+                Watch as our collaboration achieves remarkable and sustainable growth for your business.
               </dd>
             </div>
           </div>

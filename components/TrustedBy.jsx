@@ -15,14 +15,14 @@ const TrustedBy = () => {
     <div className="text-center  text-black py-12">
       <MaxWidthWrapper>
         <div className="bg-gray-200 p-4 md:p-8 rounded-lg">
-         <div className="flex justify-center flex-col items-start text-left py-4 md:px-8 px-4">
+         <div id="roadmap" className="flex justify-center flex-col items-start text-left py-4 md:px-8 px-4">
              <h1 className="text-3xl font-bold mb-4">
-               Confianza y Calidad a tu Alcance.
+               Trust and Quality at Your Reach
              </h1>
              <p className="text-gray-600 mb-8">
-               Cada proyecto es una oportunidad para demostrar nuestra calidad y
-               compromiso. <br /> Ahorra tiempo eligiendo nuestros servicios y recibe
-               resultados excepcionales al mejor precio..
+               Each project is an opportunity to demonstrate our quality and
+               commitment. <br /> Save time by choosing our services and receive
+               exceptional results at the best price.
              </p>
          </div>
           <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-4 items-center   ">

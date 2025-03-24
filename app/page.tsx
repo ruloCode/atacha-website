@@ -23,8 +23,6 @@ import ReadyToStart from "@/components/ReadyToStart";
 import Footer from "@/components/Footer";
 
 const Home = () => {
-  const { user } = useUser();
-
   return (
     <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden bg-white ">
       <Header />

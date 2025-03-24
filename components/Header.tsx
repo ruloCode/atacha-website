@@ -74,21 +74,7 @@ const Header = () => {
           <HamburgerMenu />
         </nav>
 
-        <Link
-          href="/sign-up"
-          className="button hidden mr-8 text-black/50 transition-colors hover:text-black lg:block"
-        >
-          Crea tu cuenta
-        </Link>
-
-        <button
-          onClick={() => {
-            router.push("/dashboard");
-          }}
-          className="button hidden mr-8 text-black/50 transition-colors hover:text-black lg:block"
-        >
-          Ingresa
-        </button>
+      
 
         <Button
           className="ml-auto lg:hidden "

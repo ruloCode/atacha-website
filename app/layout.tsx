@@ -1,8 +1,8 @@
 import { inter, open_sans } from "./ui/fonts";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
-
 import { ClerkProvider } from "@clerk/nextjs";
+
 import "./ui/global.css";
 export default function RootLayout({
   children,
@@ -10,7 +10,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    
       <html lang="en">
         <head>
           <meta charSet="utf-8" />
@@ -63,6 +63,5 @@ export default function RootLayout({
           </noscript>
         </body>
       </html>
-    </ClerkProvider>
   );
 }
